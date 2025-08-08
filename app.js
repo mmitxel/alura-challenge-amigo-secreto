@@ -17,9 +17,18 @@ function mostrarLista() {
     // Borrar la lista mostrada actual
     document.getElementById("listaAmigos").innerHTML= "";
     // Itera sobre la lista y añade cada elemento a la lista de amigos del HTML
-    for (amigo of amigos) {
+    for (item of amigos) {
         const nuevoAmigo = document.createElement("li");
-        nuevoAmigo.innerHTML = amigo;
+        nuevoAmigo.innerHTML = item;
         listaAmigos.appendChild(nuevoAmigo);
     }
+}
+
+function sortearAmigo() {
+    document.getElementById("resultado").innerHTML = "";
+    seleccion = amigos[Math.floor(Math.random() * amigos.length)];
+    console.log(seleccion);
+    const resultado = document.createElement("li");
+    resultado.innerHTML = seleccion;
+    document.getElementById("resultado").appendChild(resultado);
 }
