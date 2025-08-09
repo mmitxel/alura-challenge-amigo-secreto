@@ -26,9 +26,13 @@ function mostrarLista() {
 
 function sortearAmigo() {
     document.getElementById("resultado").innerHTML = "";
-    seleccion = amigos[Math.floor(Math.random() * amigos.length)];
-    console.log(seleccion);
-    const resultado = document.createElement("li");
-    resultado.innerHTML = seleccion;
-    document.getElementById("resultado").appendChild(resultado);
+    if (amigos.length == 0) {
+        alert("No hay amigos registrados!")
+    } else {
+        seleccion = amigos[Math.floor(Math.random() * amigos.length)];
+        console.log(seleccion);
+        const resultado = document.createElement("li");
+        resultado.innerHTML = seleccion;
+        document.getElementById("resultado").appendChild(resultado);
+    }
 }
